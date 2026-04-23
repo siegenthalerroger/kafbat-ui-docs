@@ -37,8 +37,18 @@ kafka:
       schemaRegistryShowNullValues: true  # Show null fields in Avro messages (default: false)
       schemaRegistryUseFullyQualifiedNames: true  # Use full type names in unions (default: false)
       schema-registry-auth:
+        # Basic authentication
         username: schema registry username
         password: schema registry password
+        # OAuth client-credentials authentication
+        oauth:
+          tokenUrl: https://auth.example.com/oauth/token
+          clientId: your-client-id
+          clientSecret: your-client-secret
+          scopes: schema-registry:read,schema-registry:write
+          tokenCacheEnabled: true   # default: true
+          tokenRefreshBuffer: 60s   # default: 60s
+          maxRetries: 1             # default: 1 (retries on 401 Unauthorized)
       schema-registry-ssl:
         keystore-location: path/to/keystore/file.jks
         keystore-password: password
