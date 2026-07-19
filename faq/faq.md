@@ -24,23 +24,9 @@ See [this](https://github.com/kafbat/kafka-ui/blob/main/documentation/compose/au
 
 Planned, see [#478](https://github.com/kafbat/kafka-ui/issues/478)
 
-### Smart filters syntax
+### Message filtering / smart filters syntax
 
-We use CEL syntax for smart message filtersVariables bound to the context:
-
-1. key (json if possible)
-2. value (json if possible)
-3. keyAsText
-4. valueAsText
-5. header
-6. partition
-7. timestampMs
-
-JSON parsing logic:Key and Value (if parsing to JSON is available) are bound as JSON objects, otherwise as nulls.Filter examples:
-
-1. `has(record.keyAsText) && record.keyAsText.matches(".*[Gg]roovy.*")` - regex for key as a string
-2. `has(record.key.name.first) && record.key.name.first == 'user1'` - in case if the value is json
-3. `record.headers.size() == 1 && !has(record.headers.k1) && record.headers['k2'] == 'v2'`
+[filtering.md](filtering.md "mention")
 
 ### Can I use the app as API?
 
