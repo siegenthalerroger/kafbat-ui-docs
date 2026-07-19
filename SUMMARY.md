@@ -71,5 +71,6 @@
 * [Common problems](faq/common-problems.md)
 * [MCP Server](faq/mcp.md)
 * [FAQ](faq/faq.md)
+* [Message Filtering](faq/filtering.md)
 * [RBAC Issues](faq/rbac-issues.md)
 * [Authentication Issues](faq/authentication.md)
